@@ -1,0 +1,115 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+export GREP_OPTIONS='--color=auto'
+
+# http://unix.stackexchange.com/questions/31/list-of-useful-less-functions
+# http://blog.nexcess.net/2011/10/30/features-of-the-less-pager/
+# -G - turn off highlighting
+# -M - show line number and percentage
+# -I - ignore case in searches
+# -S - chop off long lines
+# ma - mark position as 'a', return with 'a
+# &pattern - only show lines matching pattern
+# &!pattern - exclude lines matching pattern
+export PAGER=/usr/bin/less
+
+# -F Causes less to automatically exit if the entire file can be displayed on
+#    the first screen
+# -X don't send termcap stuff so it will stop clearing the screen when it exits
+# -M show line number and percentage
+#export LESS=-J
+
+# http://askubuntu.com/questions/4575/terminal-colours
+# https://gist.github.com/sharad/rc/blob/master/LESS_TERMCAP
+# make man pages all colorful
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# formatted as 2000-03-14 03:14:15
+export HISTTIMEFORMAT="%F %T "
+
+# http://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
+# too many scripts are use $EDITOR to choose your editor instead of $VISUAL and
+# I am sick of having to edit stuff in ed so just set $EDITOR to a fancy pants
+# editor instead of a line editor
+if [ -e /usr/bin/mg ]; then
+    export EDITOR=/usr/bin/mg
+    export VISUAL=/usr/bin/mg
+    export SUDO_EDITOR=/usr/bin/mg
+elif [ -e /usr/bin/emacs ]; then
+    export EDITOR="/usr/bin/emacs -nw"
+    export VISUAL="/usr/bin/emacs -nw"
+    export SUDO_EDITOR="/usr/bin/emacs -nw"
+else
+    export EDITOR=/bin/vi
+    export VISUAL=/bin/vi
+    export SUDO_EDITOR=/bin/vi
+fi
+
+# so whenever I open something in the terminal it doesn't open emacs in X
+alias emacs='emacs -nw'
+
+# protect myself from myself
+alias rm='rm --preserve-root'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# With -F, on listings append the following
+#    '*' for executable regular files
+#    '/' for directories
+#    '@' for symbolic links
+#    '|' for FIFOs
+#    '=' for sockets
+alias ls='ls -F --color=auto'
+
+# only append to bash history to prevent it from overwriting it when you have
+# multiple ssh windows open
+shopt -s histappend
+# save all lines of a multiple-line command in the same history entry
+shopt -s cmdhist
+# correct minor errors in the spelling of a directory component
+shopt -s cdspell
+# check the window size after each command and, if necessary, updates the values of LINES and COLUMNS
+shopt -s checkwinsize
+
+# emacs as readline mode
+# is default but will set anyways
+set -o emacs
+
+# https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash
+txtblk='\[\e[0;30m\]' # Black - Regular
+txtred='\[\e[0;31m\]' # Red
+txtgrn='\[\e[0;32m\]' # Green
+txtylw='\[\e[0;33m\]' # Yellow
+txtblu='\[\e[0;34m\]' # Blue
+txtpur='\[\e[0;35m\]' # Purple
+txtcyn='\[\e[0;36m\]' # Cyan
+txtwht='\[\e[0;37m\]' # White
+bldblk='\[\e[1;30m\]' # Black - Bold
+bldred='\[\e[1;31m\]' # Red
+bldgrn='\[\e[1;32m\]' # Green
+bldylw='\[\e[1;33m\]' # Yellow
+bldblu='\[\e[1;34m\]' # Blue
+bldpur='\[\e[1;35m\]' # Purple
+bldcyn='\[\e[1;36m\]' # Cyan
+bldwht='\[\e[1;37m\]' # White
+unkblk='\[\e[4;30m\]' # Black - Underline
+undred='\[\e[4;31m\]' # Red
+undgrn='\[\e[4;32m\]' # Green
+undylw='\[\e[4;33m\]' # Yellow
+undblu='\[\e[4;34m\]' # Blue
+undpur='\[\e[4;35m\]' # Purple
+undcyn='\[\e[4;36m\]' # Cyan
+undwht='\[\e[4;37m\]' # White
+txtrst='\[\e[0m\]'    # Text Reset
+
+#PS1="[${txtylw}\$(date +%H%M)${txtrst}][\u@\h \W]\$ "
