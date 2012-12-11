@@ -85,6 +85,9 @@ shopt -s checkwinsize
 # is default but will set anyways
 set -o emacs
 
+# http://superuser.com/questions/394153/what-causes-bash-to-pause-after-a-bad-command
+unset command_not_found_handle
+
 # https://wiki.archlinux.org/index.php/Color_Bash_Prompt#List_of_colors_for_prompt_and_Bash
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
