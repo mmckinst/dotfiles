@@ -7,7 +7,7 @@
 	interactive = auto
 	status = auto
 [alias]
-	st = status
+	st = status --short
 	ci = commit
 	df = diff
 	br = branch
