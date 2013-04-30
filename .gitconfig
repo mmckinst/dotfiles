@@ -13,6 +13,7 @@
 	br = branch
 	bra = branch -a
 	co = checkout
+	tree = log --graph --oneline
 [core]
 	editor = emacs
 [merge]
