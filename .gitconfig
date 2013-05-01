@@ -2,10 +2,7 @@
 	name = Mark McKinstry
 	email = mmckinst@example.com
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+	ui = auto
 [alias]
 	st = status --short
 	ci = commit
