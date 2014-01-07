@@ -82,8 +82,23 @@
 ;; show trailine whitespace
 (setq-default show-trailing-whitespace t)
 
+;; org mode department
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
 ;; org mode log timestamp when an item is marked as done
-(setq org-log-done t)
+(setq org-log-done 'time)
+;; org mode log the time too, not just the date
+(setq org-log-done-with-time t)
+
+;; don't show items stuck in waiting
+(setq org-agenda-skip-function-global
+      '(org-agenda-skip-entry-if 'todo '("WAITING")))
+
+;; log state changes in drawer
+(setq org-log-into-drawer t)
 
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
