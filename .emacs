@@ -47,6 +47,9 @@
 (unless window-system
   (menu-bar-mode -1))
 
+;; don't display anything in scatch buffer
+(setq initial-scratch-message "")
+
 ;; toolbar is uselss 100% of the time including in x11
 (tool-bar-mode -1)
 
