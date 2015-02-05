@@ -9,6 +9,10 @@ fi
 # make ctrl-s work for searching forward in bash history
 [[ $- == *i* ]] && stty -ixon
 
+# https://stackoverflow.com/questions/1030182/how-do-i-change-bash-history-completion-to-complete-whats-already-on-the-line
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 export GREP_OPTIONS='--color=auto'
 
 # http://unix.stackexchange.com/questions/31/list-of-useful-less-functions
