@@ -3,6 +3,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# https://unix.stackexchange.com/questions/39273/how-to-navigate-within-bashs-reverse-search
+# https://stackoverflow.com/questions/791765/unable-to-forward-search-bash-history-similarly-as-with-ctrl-r
+# https://stackoverflow.com/questions/24623021/getting-stty-standard-input-inappropriate-ioctl-for-device-when-using-scp-thro
+# make ctrl-s work for searching forward in bash history
+[[ $- == *i* ]] && stty -ixon
+
 export GREP_OPTIONS='--color=auto'
 
 # http://unix.stackexchange.com/questions/31/list-of-useful-less-functions
