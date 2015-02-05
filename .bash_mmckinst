@@ -13,8 +13,6 @@ fi
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-export GREP_OPTIONS='--color=auto'
-
 # http://unix.stackexchange.com/questions/31/list-of-useful-less-functions
 # http://blog.nexcess.net/2011/10/30/features-of-the-less-pager/
 # -G - turn off highlighting
@@ -72,6 +70,11 @@ alias rm='rm --preserve-root'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+
+# GREP_OPTIONS is deprecated, replace with aliases
+alias  grep='grep --color=auto'
+alias fgrep='grep -F --color=auto'
+alias egrep='grep -E --color=auto'
 
 # With -F, on listings append the following
 #    '*' for executable regular files
