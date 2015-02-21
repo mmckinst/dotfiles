@@ -44,6 +44,10 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # formatted as 2000-03-14 03:14:15
 export HISTTIMEFORMAT="%F %T "
 
+# https://superuser.com/questions/310914/permanently-change-date-time-format-for-ls
+# http://rene.kabis.org/2011/05/07/linux-and-displaying-dates-in-iso-8601-format/
+export TIME_STYLE=long-iso
+
 # http://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
 # too many scripts are use $EDITOR to choose your editor instead of $VISUAL and
 # I am sick of having to edit stuff in ed so just set $EDITOR to a fancy pants
