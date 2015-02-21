@@ -10,8 +10,8 @@ fi
 [[ $- == *i* ]] && stty -ixon
 
 # https://stackoverflow.com/questions/1030182/how-do-i-change-bash-history-completion-to-complete-whats-already-on-the-line
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+#bind '"\e[A": history-search-backward'
+#bind '"\e[B": history-search-forward'
 
 # http://unix.stackexchange.com/questions/31/list-of-useful-less-functions
 # http://blog.nexcess.net/2011/10/30/features-of-the-less-pager/
