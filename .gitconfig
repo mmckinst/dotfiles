@@ -7,7 +7,6 @@
 	co = checkout
 	st = status --short
 	br = branch
-	bra = branch -a
 	tree = log --graph --oneline
 [core]
 	editor = emacs
