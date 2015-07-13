@@ -103,6 +103,10 @@
 ;; log state changes in drawer
 (setq org-log-into-drawer t)
 
+;; http://emacsredux.com/blog/2013/04/05/prog-mode-the-parent-of-all-programming-modes/
+(if (>= emacs-major-version 24)
+    (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
 (setq user-full-name "Mark McKinstry")
