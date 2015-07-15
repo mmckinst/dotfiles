@@ -108,6 +108,10 @@
 (if (>= emacs-major-version 24)
     (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
+;; line numbers in the left margin
+;; (if (>= emacs-major-version 23)
+;;     (global-linum-mode 1))
+
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
 (setq user-full-name "Mark McKinstry")
