@@ -8,13 +8,13 @@
 ;; stop at the end of the file, don't just add lines
 (setq next-line-add-newlines nil)
 
-;; Show column-number in the mode line
+;; show column-number in the mode line
 (column-number-mode t)
 
 ;; highlight regions (when yanking)
 (transient-mark-mode 1)
 
-;; always show the line number
+;; show line number in the mode line
 (line-number-mode t)
 
 ;; y/n instead of yes/no
