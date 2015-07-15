@@ -20,9 +20,12 @@
 ;; y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; iswitch mode is much better
+;; ido mode is much better
+;; added in 22.1
+;; https://www.gnu.org/software/emacs/news/NEWS.22.1
+;;
 ;; use C-s and C-r to cycle through possible options
-(if (> emacs-major-version 21)
+(if (>= emacs-major-version 22)
     (progn
       (ido-mode t)
       (setq ido-enable-flex-matching t)
