@@ -47,7 +47,8 @@
 
 ;; ibuffer added in 22.1
 ;; https://www.gnu.org/software/emacs/news/NEWS.22.1
-(defalias 'list-buffers 'ibuffer)
+(if (>= emacs-major-version 22)
+    (defalias 'list-buffers 'ibuffer))
 
 
 ;; disable menu bar, AKA "drop down menu" which is useless if its not running
@@ -135,4 +136,3 @@
   "Insert timestamp in the ISO 8601 format"
   (interactive)
   (insert (format-time-string "%Y-%m-%d")))
-
