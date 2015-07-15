@@ -108,10 +108,14 @@
 (setq org-log-into-drawer t)
 
 ;; http://emacsredux.com/blog/2013/04/05/prog-mode-the-parent-of-all-programming-modes/
+;; prog-mode added in 24.1
+;; https://www.gnu.org/software/emacs/news/NEWS.24.1
 (if (>= emacs-major-version 24)
     (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
 ;; line numbers in the left margin
+;; added in 23.1
+;; https://www.gnu.org/software/emacs/news/NEWS.23.1
 ;; (if (>= emacs-major-version 23)
 ;;     (global-linum-mode 1))
 
