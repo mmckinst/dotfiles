@@ -45,6 +45,11 @@
 ;; give me a preview in the mini buffer
 (icomplete-mode 1)
 
+;; ibuffer added in 22.1
+;; https://www.gnu.org/software/emacs/news/NEWS.22.1
+(defalias 'list-buffers 'ibuffer)
+
+
 ;; disable menu bar, AKA "drop down menu" which is useless if its not running
 ;; in x11
 (unless window-system
