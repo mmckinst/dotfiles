@@ -51,7 +51,8 @@
 (setq initial-scratch-message "")
 
 ;; toolbar is uselss 100% of the time including in x11
-(tool-bar-mode -1)
+(if window-system
+    (tool-bar-mode -1))
 
 ;; stop making tilde backup files
 (setq make-backup-files nil)
