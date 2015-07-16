@@ -48,8 +48,7 @@
 ;; ibuffer added in 22.1
 ;; https://www.gnu.org/software/emacs/news/NEWS.22.1
 (if (>= emacs-major-version 22)
-    (defalias 'list-buffers 'ibuffer))
-
+    (defalias 'list-buffers 'ibuffer-other-window))
 
 ;; disable menu bar, AKA "drop down menu" which is useless if its not running
 ;; in x11
