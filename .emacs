@@ -52,14 +52,18 @@
 
 ;; disable menu bar, AKA "drop down menu" which is useless if its not running
 ;; in x11
-(unless window-system
+(unless (display-graphic-p)
   (menu-bar-mode -1))
 
 ;; don't display anything in scatch buffer
 (setq initial-scratch-message "")
 
-;; toolbar is uselss 100% of the time including in x11
-(if window-system
+;; toolbar is uselss 100% of the time including in a GUI but the symbole is only
+;; defined when using a graphical display
+;;
+;; https://serverfault.com/questions/132055/how-to-check-if-emacs-is-in-gui-mode-and-execute-tool-bar-mode-only-then
+;; https://superuser.com/questions/313398/how-to-prevent-the-symbols-function-definition-is-void-error-when-running-em
+(if (display-graphic-p)
     (tool-bar-mode -1))
 
 ;; stop making tilde backup files
