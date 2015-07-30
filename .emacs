@@ -139,3 +139,6 @@
   "Insert timestamp in the ISO 8601 format"
   (interactive)
   (insert (format-time-string "%Y-%m-%d")))
+
+
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
