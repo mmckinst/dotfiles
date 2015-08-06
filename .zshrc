@@ -36,15 +36,12 @@ export PAGER=/usr/bin/less
 if [ -e /usr/bin/mg ]; then
     export EDITOR="/usr/bin/mg -n"
     export VISUAL="/usr/bin/mg -n"
-    export SUDO_EDITOR="/usr/bin/mg -n"
 elif [ -e /usr/bin/emacs ]; then
     export EDITOR="/usr/bin/emacs -q -nw"
     export VISUAL="/usr/bin/emacs -q -nw"
-    export SUDO_EDITOR="/usr/bin/emacs -q -nw"
 else
     export EDITOR=/bin/vi
     export VISUAL=/bin/vi
-    export SUDO_EDITOR=/bin/vi
 fi
 
 # protect myself from myself
