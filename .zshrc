@@ -30,6 +30,10 @@ setopt BASH_AUTO_LIST
 autoload -U select-word-style
 select-word-style bash
 
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+
 export PAGER=/usr/bin/less
 
 # http://unix.stackexchange.com/questions/4859/visual-vs-editor-whats-the-difference
