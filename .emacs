@@ -47,6 +47,8 @@
 
 ;; ibuffer added in 22.1
 ;; https://www.gnu.org/software/emacs/news/NEWS.22.1
+;;
+;; rebind C-x C-b to use ibuffer
 (if (>= emacs-major-version 22)
     (defalias 'list-buffers 'ibuffer-other-window))
 
