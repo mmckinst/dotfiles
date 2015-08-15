@@ -5,6 +5,10 @@
 ;; font-lock for all buffers
 (global-font-lock-mode 1)
 
+;; highlight matching parentheses
+(show-paren-mode t)
+(setq show-paren-delay 0)
+
 ;; stop at the end of the file, don't just add lines
 (setq next-line-add-newlines nil)
 
