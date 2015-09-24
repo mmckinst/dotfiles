@@ -144,3 +144,5 @@
 
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(global-set-key (kbd "C-x g") 'magit-status)
