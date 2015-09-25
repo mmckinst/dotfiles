@@ -142,9 +142,6 @@
   (insert (format-time-string "%Y-%m-%d")))
 
 
-;; https://www.gnu.org/software/emacs/news/NEWS.24.1
-;; https://elpa.gnu.org/
-;;
 ;; package.el added in emacs 24
 (when (>= emacs-major-version 24)
   (require 'package)
