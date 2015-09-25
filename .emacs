@@ -85,10 +85,6 @@
 ;; simple highlighting for files where no mode is defined
 (require 'generic-x)
 
-;; show time in the mode line
-;; (setq display-time-24hr-format t)
-;; (display-time-mode 1)
-
 ;; fill at 80 columns
 (setq-default fill-column 80)
 
@@ -148,3 +144,5 @@
 
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(global-set-key (kbd "C-x g") 'magit-status)
