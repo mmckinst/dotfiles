@@ -124,6 +124,9 @@
 (if (>= emacs-major-version 24)
     (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
+;; https://stackoverflow.com/questions/15891808/emacs-how-to-enable-automatic-spell-check-by-default
+(add-hook 'text-mode-hook 'flyspell-mode)
+
 ;; line numbers in the left margin
 ;; added in 23.1
 ;; https://www.gnu.org/software/emacs/news/NEWS.23.1
