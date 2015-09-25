@@ -33,14 +33,12 @@
     (progn
       (ido-mode t)
       (setq ido-enable-flex-matching t)
-      ;;(add-to-list 'ido-ignore-buffers "^ ")
       (add-to-list 'ido-ignore-buffers "*Messages*")
       (add-to-list 'ido-ignore-buffers "*Buffer*")
       (add-to-list 'ido-ignore-buffers "*Help*")
       (add-to-list 'ido-ignore-buffers "*Completions*"))
   (progn
     (iswitchb-mode 1)
-    ;;(add-to-list 'iswitchb-buffer-ignore "^ ")
     (add-to-list 'iswitchb-buffer-ignore "*Messages*")
     (add-to-list 'iswitchb-buffer-ignore "*Buffer*")
     (add-to-list 'iswitchb-buffer-ignore "*Help*")
