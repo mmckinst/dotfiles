@@ -150,6 +150,10 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; https://www.gnu.org/software/emacs/news/NEWS.24.1
+;; https://elpa.gnu.org/
+;;
+;; package.el added in emacs 24
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")))
