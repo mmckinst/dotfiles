@@ -88,8 +88,9 @@
 ;; fill at 80 columns
 (setq-default fill-column 80)
 
-;; M-g is now goto-line
-(global-set-key "\M-g" 'goto-line)
+;; keybindings
+(global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; make inserting an iso-8601 timestamp easier
 ;; 'd' stands for date
@@ -147,8 +148,6 @@
 
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; https://www.gnu.org/software/emacs/news/NEWS.24.1
 ;; https://elpa.gnu.org/
