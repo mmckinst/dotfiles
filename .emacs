@@ -99,6 +99,7 @@
 (when (>= emacs-major-version 24)
   (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 (add-hook 'text-mode-hook 'flyspell-mode)
+;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; give duplicate buffers better names instead of somefile<1> and somefile<2>
 ;; they get somefile<foo> and somefile<bar> when they are in the 'foo' and 'bar'
@@ -106,6 +107,9 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (setq uniquify-after-kill-buffer-p t)
+
+;; (require 'recentf)
+;; (recentf-mode t)
 
 ;; simple highlighting for files where no mode is defined
 (require 'generic-x)
