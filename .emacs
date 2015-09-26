@@ -109,11 +109,15 @@
 
 ;; ido mode added in 22.1
 ;;
-;; use C-s and C-r to cycle through possible options
+;; makes opening files (C-x f) and switching buffers (C-x b) easier
+;;
+;; C-s and C-r to cycle through possible options
+;; C-j to create a new file or buffer. if using return ido will prompt you
 (if (>= emacs-major-version 22)
     (progn
       (ido-mode t)
       (setq ido-enable-flex-matching t)
+      (setq ido-use-virtual-buffers t)
       (add-to-list 'ido-ignore-buffers "*Messages*")
       (add-to-list 'ido-ignore-buffers "*Buffer*")
       (add-to-list 'ido-ignore-buffers "*Help*")
