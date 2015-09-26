@@ -28,6 +28,9 @@
 ;; give me a preview in the mini buffer
 (icomplete-mode 1)
 
+;; select a region and just start typing to delete it
+(delete-selection-mode 1)
+
 ;; highlight matching parentheses
 (show-paren-mode t)
 (setq show-paren-delay 0)
