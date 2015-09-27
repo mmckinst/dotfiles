@@ -81,8 +81,19 @@
 ;; fill at 80 columns
 (setq fill-column 80)
 
-;; show trailing whitespace
-(setq show-trailing-whitespace t)
+;; highlight bad whitespace
+;;
+;; emacs 23 has whitespace mode that highlights lines over fill-column
+;; (80) characters
+(if (< emacs-major-version 23)
+    (setq show-trailing-whitespace t)
+  (progn
+    (require 'whitespace)
+    (add-to-list 'whitespace-style 'lines-tail)
+    (setq whitespace-style '(face lines-tail trailing))
+    (when (>= emacs-major-version 24)
+      (add-hook 'prog-mode-hook 'whitespace-mode))
+    (add-hook 'text-mode-hook 'whitespace-mode)))
 
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
