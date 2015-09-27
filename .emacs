@@ -206,6 +206,60 @@
 ;; | CUSTOM STUFF                                                              |
 ;;  ---------------------------------------------------------------------------
 
+;; package.el added in emacs 24
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (setq package-enable-at-startup nil)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+  (package-initialize)
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+  (use-package magit
+    :bind ("C-x g" . magit-status))
+  (use-package yaml-mode
+    :mode "\\.yaml\\'"
+    :mode "\\.yml\\'")
+  (use-package php-mode
+    :mode "\\.php\\'")
+  (use-package rpm-spec-mode
+    :mode "\\.spec\\'")
+  (use-package markdown-mode
+    :mode "\\.md\\'"
+    :mode "\\.markdown\\'")
+  (use-package multiple-cursors
+    :bind(("C->" . mc/mark-next-like-this)
+	  ("C-<" . mc/mark-previous-like-this)
+	  ("C-c C-<" . mc/mark-all-like-this)))
+  (use-package discover-my-major
+    :bind ("C-h C-m" . discover-my-major))
+  (use-package smex
+    :bind (("M-x" . smex)
+	   ("M-X" . smex-major-mode-commands)))
+  (use-package avy
+    :disabled t)
+  (use-package ido-ubiquitous
+    :config (ido-ubiquitous-mode 1))
+  (use-package flx-ido
+    :init (setq ido-use-faces nil)
+    :config (flx-ido-mode 1))
+  (use-package flycheck
+    ;; can use flymake that comes with emacs >= 22.1
+    :disabled t)
+  (use-package helm
+    ;; helm might be interesting some day but is overly complex right now
+    :disabled t
+    :init (require 'helm-config)
+    :bind (("C-h a" . helm-apropos)
+	   ("C-x C-b" . helm-buffers-list)
+	   ("C-x b" . helm-buffers-list)
+	   ("M-y" . helm-show-kill-ring)
+	   ("M-x" . helm-M-x))))
+
+
 ;; org mode department
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
