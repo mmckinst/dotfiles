@@ -1,6 +1,20 @@
 ;; generic section works on emacs >= 21.3 since I still have to touch CentOS 4
-;; servers which has 21.3. CentOS 5 is not much better, only having 21.4
+;; servers which have 21.3.
 ;;
+;; CentOS 4: 21.3
+;; CentOS 5: 21.4
+;; CentOS 6: 23.1
+;; CentOS 7: 24.3
+;;
+;; Debian 6 (squeeze): 23.2
+;; Debian 7 (wheezy): 23.4
+;; Debian 8 (jessie): 24.4
+;;
+;; Ubuntu 12.04 LTS (precise): 23.3
+;; Ubuntu 14.04 LTS (trusty): 24.3
+
+
+
 ;; generic section is for any random computer I happen to need to edit stuff,
 ;; can copy paste in to .emacs as needed
 ;;
