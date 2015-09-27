@@ -152,7 +152,8 @@
 ;; makes opening files (C-x f) and switching buffers (C-x b) easier
 ;;
 ;; C-s and C-r to cycle through possible options
-;; C-j to create a new file or buffer. if using return ido will prompt you
+;; C-SPC or C-@ to restrict the completion list
+;; C-j to create a new file or buffer without ido prompting you
 (if (>= emacs-major-version 22)
     (progn
       (ido-mode t)
