@@ -99,6 +99,11 @@
 (setq user-mail-address "mmckinst@example.com")
 (setq user-full-name "Mark McKinstry")
 
+
+;; https://stackoverflow.com/questions/3170947/can-i-modify-the-color-of-emacs-mini-buffer
+;; https://stackoverflow.com/questions/6866720/how-to-change-emacs-command-line-color
+(set-face-foreground 'minibuffer-prompt "blue")
+
 ;; y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
