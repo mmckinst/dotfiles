@@ -124,7 +124,6 @@
     (progn
       (ido-mode t)
       (setq ido-enable-flex-matching t)
-      (setq ido-use-virtual-buffers t)
       (add-to-list 'ido-ignore-buffers "*Messages*")
       (add-to-list 'ido-ignore-buffers "*Buffer*")
       (add-to-list 'ido-ignore-buffers "*Help*")
