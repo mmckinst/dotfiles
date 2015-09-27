@@ -110,6 +110,9 @@
 ;; keybindings
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-c d") 'insert-iso-8601-timestamp)
+(global-set-key (kbd "C-c u") 'insert-mmckinst-iso-8601-timestamp)
+(global-set-key (kbd "C-x 4 t") 'transpose-windows)
 
 ;; markdown-mode usually comes from emacs-goodies package
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
@@ -171,23 +174,31 @@
 ;;   (global-linum-mode 1)
 ;;   (setq linum-format "%4d \u2502 "))
 
-;; make inserting an iso-8601 timestamp easier
-;; 'd' stands for date
-;; 't' stands for timestamp
-(global-set-key (kbd "C-c d") 'insert-timestamp-iso-8601)
-(global-set-key (kbd "C-c t") 'insert-timestamp-iso-8601)
-(defun insert-timestamp-iso-8601()
-  "Insert timestamp in the ISO 8601 format"
+
+
+;; make inserting an ISO 8601 timestamp easier
+(defun insert-iso-8601-timestamp()
+  "Insert ISO 8601 YYYY-MM-DD timestamp"
   (interactive)
   (insert (format-time-string "%Y-%m-%d")))
+(defun insert-mmckinst-iso-8601-timestamp()
+  "Insert ISO 8601 YYYY-MM-DD timestamp, followed by 'mmckinst'"
+  (interactive)
+  (insert-iso-8601-timestamp)
+  (insert " mmckinst"))
 
 
-;; package.el added in emacs 24
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")))
-
+;; https://stackoverflow.com/questions/1510091/with-emacs-how-do-you-swap-the-position-of-2-windows
+(defun transpose-windows ()
+  (interactive)
+  (let ((this-buffer (window-buffer (selected-window)))
+	(other-buffer (prog2
+			  (other-window +1)
+			  (window-buffer (selected-window))
+			(other-window -1))))
+    (switch-to-buffer other-buffer)
+    (switch-to-buffer-other-window this-buffer)
+    (other-window -1)))
 
 
 ;;  ---------------------------------------------------------------------------
