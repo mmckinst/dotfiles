@@ -109,6 +109,7 @@
 
 ;; keybindings
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c d") 'insert-iso-8601-timestamp)
 (global-set-key (kbd "C-c u") 'insert-mmckinst-iso-8601-timestamp)
