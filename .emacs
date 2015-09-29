@@ -260,20 +260,27 @@
 	   ("M-x" . helm-M-x))))
 
 
-;; org mode department
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+;; org mode added in emacs 22
+(when (>= emacs-major-version 22)
+  (global-set-key (kbd "C-c l") 'org-store-link)
+  (global-set-key (kbd "C-c c") 'org-capture)
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  (global-set-key (kbd "C-c b") 'org-iswitchb)
 
-;; org mode log timestamp when an item is marked as done
-(setq org-log-done 'time)
-;; org mode log the time too, not just the date
-(setq org-log-done-with-time t)
+  ;; log when something is marked as done.
+  ;;
+  ;; default is to log the date as YYYY-MM-DD but put the HH:MM there too
+  (setq org-log-done 'time)
+  (setq org-log-done-with-time t)
+  (setq org-log-into-drawer t)
 
-;; don't show items stuck in waiting
-(setq org-agenda-skip-function-global
-      '(org-agenda-skip-entry-if 'todo '("WAITING")))
+  ;; orgmode.org/manual/Clean-view.html
+  (setq org-startup-indented t)
 
-;; log state changes in drawer
-(setq org-log-into-drawer t)
+  ;; rebind C-a, C-e, and C-k
+  (setq org-special-ctrl-a/e t)
+  (setq org-special-ctrl-k t)
+
+  ;; protect myself from myself
+  (setq org-ctrl-k-protect-subtree t)
+  (setq org-catch-invisible-edits 'show))
