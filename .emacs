@@ -89,7 +89,6 @@
     (setq show-trailing-whitespace t)
   (progn
     (require 'whitespace)
-    (add-to-list 'whitespace-style 'lines-tail)
     (setq whitespace-style '(face lines-tail trailing))
     (when (>= emacs-major-version 24)
       (add-hook 'prog-mode-hook 'whitespace-mode))
