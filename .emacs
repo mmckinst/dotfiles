@@ -116,6 +116,7 @@
 
 ;; markdown-mode usually comes from emacs-goodies package
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.mkd\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; rebind C-x C-b to use ibuffer
