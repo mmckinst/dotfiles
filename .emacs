@@ -109,6 +109,7 @@
 
 ;; keybindings
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c d") 'mmckinst-insert-iso-8601-date)
@@ -197,6 +198,11 @@
     (switch-to-buffer other-buffer)
     (switch-to-buffer-other-window this-buffer)
     (other-window -1)))
+
+
+;; make M-z do what I want
+(autoload 'zap-up-to-char "misc"
+  "Kill up to, but not including ARGth occurrence of CHAR.")
 
 
 ;;  ---------------------------------------------------------------------------
