@@ -110,7 +110,6 @@
 ;; keybindings
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
-(global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c d") 'mmckinst-insert-iso-8601-date)
 (global-set-key (kbd "C-x 4 t") 'transpose-windows)
