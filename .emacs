@@ -111,8 +111,7 @@
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-c d") 'insert-iso-8601-timestamp)
-(global-set-key (kbd "C-c u") 'insert-mmckinst-iso-8601-timestamp)
+(global-set-key (kbd "C-c d") 'mmckinst-insert-iso-8601-date)
 (global-set-key (kbd "C-x 4 t") 'transpose-windows)
 
 ;; markdown-mode usually comes from emacs-goodies package
@@ -177,17 +176,14 @@
 ;;   (setq linum-format "%4d \u2502 "))
 
 
-
 ;; make inserting an ISO 8601 timestamp easier
-(defun insert-iso-8601-timestamp()
-  "Insert ISO 8601 YYYY-MM-DD timestamp"
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-(defun insert-mmckinst-iso-8601-timestamp()
-  "Insert ISO 8601 YYYY-MM-DD timestamp, followed by 'mmckinst'"
-  (interactive)
-  (insert-iso-8601-timestamp)
-  (insert " mmckinst"))
+;; use C-u as the prefix to put my name after the timestamp
+(defun mmckinst-insert-iso-8601-date(arg)
+  "Insert ISO 8601 YYYY-MM-DD date"
+  (interactive "P")
+  (insert (format-time-string "%Y-%m-%d"))
+  (if (equal arg '(4))
+      (insert " mmckinst")))
 
 
 ;; https://stackoverflow.com/questions/1510091/with-emacs-how-do-you-swap-the-position-of-2-windows
