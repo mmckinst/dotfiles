@@ -84,6 +84,7 @@ alias egrep='grep -E --color=auto'
 #    '|' for FIFOs
 #    '=' for sockets
 alias ls='ls -F --color=auto'
+alias htop='htop --no-color'
 
 # only append to bash history to prevent it from overwriting it when you have
 # multiple ssh windows open
