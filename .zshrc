@@ -54,6 +54,11 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
+# GREP_OPTIONS is deprecated, replace with aliases
+alias  grep='grep --color=auto'
+alias fgrep='grep -F --color=auto'
+alias egrep='grep -E --color=auto'
+
 # so whenever I open something in the terminal it doesn't open emacs in X
 alias emacs='emacs -nw'
 
