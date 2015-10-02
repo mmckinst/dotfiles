@@ -63,6 +63,7 @@ alias egrep='grep -E --color=auto'
 alias emacs='emacs -nw'
 
 alias ls='ls -F --color=auto'
+alias htop='htop --no-color'
 
 # http://askubuntu.com/questions/4575/terminal-colours
 # https://gist.github.com/sharad/rc/blob/master/LESS_TERMCAP
