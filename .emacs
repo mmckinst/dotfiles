@@ -81,23 +81,12 @@
 ;; fill at 80 columns
 (setq fill-column 80)
 
-;; highlight bad whitespace
-;;
-;; emacs 23 has whitespace mode that highlights lines over fill-column
-;; (80) characters
-(if (< emacs-major-version 23)
-    (setq show-trailing-whitespace t)
-  (progn
-    (require 'whitespace)
-    (setq whitespace-style '(face lines-tail trailing))
-    (when (>= emacs-major-version 24)
-      (add-hook 'prog-mode-hook 'whitespace-mode))
-    (add-hook 'text-mode-hook 'whitespace-mode)))
-
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
 (setq user-full-name "Mark McKinstry")
 
+;; for whitespace mode
+(setq whitespace-style '(face lines-tail trailing))
 
 ;; https://stackoverflow.com/questions/3170947/can-i-modify-the-color-of-emacs-mini-buffer
 ;; https://stackoverflow.com/questions/6866720/how-to-change-emacs-command-line-color
@@ -106,6 +95,9 @@
 
 ;; y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; custom aliases
+(defalias 'wm 'mmckinst-whitespace)
 
 ;; keybindings
 (global-set-key (kbd "M-g") 'goto-line)
@@ -186,6 +178,17 @@
   (if (equal arg '(4))
       (insert " mmckinst")))
 
+
+
+;; toggle highlighting of bad whitespace
+;;
+;; emacs 23 has whitespace mode that highlights lines over fill-column
+;; (80) characters
+(defun mmckinst-whitespace()
+  (interactive)
+  (if (< emacs-major-version 23)
+      (setq show-trailing-whitespace (not show-trailing-whitespace))
+    (call-interactively 'whitespace-mode)))
 
 ;; https://stackoverflow.com/questions/1510091/with-emacs-how-do-you-swap-the-position-of-2-windows
 (defun transpose-windows ()
