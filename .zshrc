@@ -76,6 +76,9 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+# http://superuser.com/questions/394153/what-causes-bash-to-pause-after-a-bad-command
+unfunction command_not_found_handler
+unfunction command_not_found_handle
 
 #PROMPT="[%F{green}%T%f][%n@%m %c]%# "
 PROMPT="[%F{green}%T%f][%(?,%n@%m %c,%F{red}%n@%m %c%f)] "
