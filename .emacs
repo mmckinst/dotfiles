@@ -286,10 +286,6 @@
   ;; orgmode.org/manual/Clean-view.html
   (setq org-startup-indented t)
 
-  ;; rebind C-a, C-e, and C-k
-  (setq org-special-ctrl-a/e t)
-  (setq org-special-ctrl-k t)
-
   ;; protect myself from myself
   (setq org-ctrl-k-protect-subtree t)
   (setq org-catch-invisible-edits 'show))
