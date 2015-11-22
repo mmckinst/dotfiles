@@ -253,6 +253,8 @@
   (use-package flx-ido
     :init (setq ido-use-faces nil)
     :config (flx-ido-mode 1))
+  (use-package fill-column-indicator
+    :init (require 'fill-column-indicator))
   (use-package flycheck
     ;; can use flymake that comes with emacs >= 22.1
     :disabled t)
