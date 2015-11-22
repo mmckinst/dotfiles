@@ -228,7 +228,8 @@
     :bind ("C-x g" . magit-status))
   (use-package yaml-mode
     :mode "\\.yaml\\'"
-    :mode "\\.yml\\'")
+    :mode "\\.yml\\'"
+    :mode "Saltfile")
   (use-package php-mode
     :mode "\\.php\\'")
   (use-package rpm-spec-mode
