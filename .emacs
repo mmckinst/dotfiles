@@ -79,7 +79,7 @@
 (setq make-backup-files nil)
 
 ;; fill at 80 columns
-(setq fill-column 80)
+(setq-default fill-column 80)
 
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
