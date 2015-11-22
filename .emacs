@@ -253,6 +253,8 @@
   (use-package flx-ido
     :init (setq ido-use-faces nil)
     :config (flx-ido-mode 1))
+  (use-package base16-theme
+    :init (load-theme 'base16-setiui-dark t))
   (use-package fill-column-indicator
     :init (require 'fill-column-indicator))
   (use-package flycheck
