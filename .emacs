@@ -229,11 +229,13 @@
   (use-package yaml-mode
     :mode "\\.yaml\\'"
     :mode "\\.yml\\'"
-    :mode "Saltfile")
+    :mode "Saltfile\\'")
   (use-package php-mode
     :mode "\\.php\\'")
   (use-package rpm-spec-mode
     :mode "\\.spec\\'")
+  (use-package dockerfile-mode
+    :mode "Dockerfile\\'")
   (use-package markdown-mode
     :mode "\\.md\\'"
     :mode "\\.markdown\\'")
