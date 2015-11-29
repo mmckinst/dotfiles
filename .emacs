@@ -234,6 +234,9 @@
     :mode "\\.php\\'")
   (use-package rpm-spec-mode
     :mode "\\.spec\\'")
+  (use-package jinja2-mode
+    :mode "\\.jinja2\\'"
+    :mode "\\.j2\\'")
   (use-package dockerfile-mode
     :mode "Dockerfile\\'")
   (use-package markdown-mode
