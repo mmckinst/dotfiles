@@ -1,7 +1,11 @@
 ---
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq bash zsh emacs23-nox
+sudo: false
+addons:
+  apt:
+    packages:
+      - bash
+      - zsh
+      - emacs23-nox
 script:
   - bash -n .bashrc
   - zsh -n .zshrc
