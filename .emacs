@@ -79,7 +79,7 @@
 (setq make-backup-files nil)
 
 ;; fill at 80 columns
-(setq fill-column 80)
+(setq-default fill-column 80)
 
 ;; mostly for rpm-spec mode
 (setq user-mail-address "mmckinst@example.com")
@@ -228,11 +228,17 @@
     :bind ("C-x g" . magit-status))
   (use-package yaml-mode
     :mode "\\.yaml\\'"
-    :mode "\\.yml\\'")
+    :mode "\\.yml\\'"
+    :mode "Saltfile\\'")
   (use-package php-mode
     :mode "\\.php\\'")
   (use-package rpm-spec-mode
     :mode "\\.spec\\'")
+  (use-package jinja2-mode
+    :mode "\\.jinja2\\'"
+    :mode "\\.j2\\'")
+  (use-package dockerfile-mode
+    :mode "Dockerfile\\'")
   (use-package markdown-mode
     :mode "\\.md\\'"
     :mode "\\.markdown\\'")
@@ -252,6 +258,10 @@
   (use-package flx-ido
     :init (setq ido-use-faces nil)
     :config (flx-ido-mode 1))
+  (use-package base16-theme
+    :init (load-theme 'base16-setiui-dark t))
+  (use-package fill-column-indicator
+    :init (require 'fill-column-indicator))
   (use-package flycheck
     ;; can use flymake that comes with emacs >= 22.1
     :disabled t)
@@ -282,10 +292,6 @@
 
   ;; orgmode.org/manual/Clean-view.html
   (setq org-startup-indented t)
-
-  ;; rebind C-a, C-e, and C-k
-  (setq org-special-ctrl-a/e t)
-  (setq org-special-ctrl-k t)
 
   ;; protect myself from myself
   (setq org-ctrl-k-protect-subtree t)
