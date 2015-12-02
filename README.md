@@ -1,3 +1,5 @@
+[![Travis](https://img.shields.io/travis/mmckinst/dotfiles.svg)](https://travis-ci.org/mmckinst/dotfiles)
+
 <p xmlns:dct="http://purl.org/dc/terms/">
   <a rel="license"
      href="http://creativecommons.org/publicdomain/zero/1.0/">
