@@ -85,6 +85,7 @@ alias egrep='grep -E --color=auto'
 #    '=' for sockets
 alias ls='ls -F --color=auto'
 alias htop='htop --no-color'
+alias mtr='mtr --show-ips'
 
 # only append to bash history to prevent it from overwriting it when you have
 # multiple ssh windows open
