@@ -13,8 +13,6 @@
 	editor = emacs
 [merge]
 	stat = true
-[merge]
-	stat = true
 	conflictstyle = diff3
 [push]
 	default = simple
