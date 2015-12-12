@@ -122,6 +122,10 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 ;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+;; eletric-indent-mode added and enabled by default in 24.4
+(when (>= (string-to-number (substring emacs-version 0 -2)) 24.4)
+  (electric-indent-mode -1))
+
 ;; give duplicate buffers better names instead of somefile<1> and somefile<2>
 ;; they get somefile<foo> and somefile<bar> when they are in the 'foo' and 'bar'
 ;; dirs
