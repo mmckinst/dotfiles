@@ -106,6 +106,9 @@
 (add-to-list 'auto-mode-alist '("\\.mkd\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; bash automated testing system
+(add-to-list 'auto-mode-alist '("\\.bats\\'" . sh-mode))
+
 ;; rebind C-x C-b to use ibuffer
 ;; ibuffer added in 22.1
 (when (>= emacs-major-version 22)
