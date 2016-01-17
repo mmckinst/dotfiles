@@ -109,6 +109,10 @@
 ;; bash automated testing system
 (add-to-list 'auto-mode-alist '("\\.bats\\'" . sh-mode))
 
+;; allow stuff like """-*- encoding: utf-8 -*-""" to work without prompting me
+;; if its a safe variable
+(add-to-list 'safe-local-variable-values '(encoding . utf-8))
+
 ;; rebind C-x C-b to use ibuffer
 ;; ibuffer added in 22.1
 (when (>= emacs-major-version 22)
