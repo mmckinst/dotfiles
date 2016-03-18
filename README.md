@@ -1,13 +1,17 @@
 [![Travis](https://img.shields.io/travis/mmckinst/dotfiles.svg)](https://travis-ci.org/mmckinst/dotfiles)
 
-<p xmlns:dct="http://purl.org/dc/terms/">
-  <a rel="license"
-     href="http://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
-  </a>
-  <br />
-  To the extent possible under law,
-  <span rel="dct:publisher" resource="[_:publisher]">the person who associated CC0</span>
-  with this work has waived all copyright and related or neighboring
-  rights to this work.
-</p>
+
+License
+----
+![license](https://licensebuttons.net/p/zero/1.0/88x31.png)
+
+```
+Written in 2016 by Mark McKinstry
+
+To the extent possible under law, the author(s) have dedicated all copyright and
+related and neighboring rights to this software to the public domain
+worldwide. This software is distributed without any warranty.
+
+You should have received a copy of the CC0 Public Domain Dedication along with
+this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+```
