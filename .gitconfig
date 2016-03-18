@@ -4,7 +4,7 @@
 	ui = auto
 [alias]
 	co = checkout
-	st = status --short --branch
+	st = status
 	br = branch
 	bra = branch --all
 	tree = log --graph --oneline
@@ -17,3 +17,6 @@
 	default = simple
 [rebase]
 	autoStash = true
+[status]
+	short = true
+	branch = true
