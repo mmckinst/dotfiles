@@ -119,6 +119,13 @@
   (defalias 'list-buffers 'ibuffer-other-window))
 
 
+;; two spaces for tabs
+(setq indent-tabs-mode nil)
+(setq tab-width 2)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
+(defvaralias 'js-indent-level 'tab-width)
+
 ;; spell checking for comments in programming modes
 ;; prog-mode added in 24.1
 ;;
