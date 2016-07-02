@@ -243,6 +243,8 @@
     :mode "\\.yaml\\'"
     :mode "\\.yml\\'"
     :mode "\\.sls\\'")
+  (use-package go-mode
+    :mode "\\.go\\'")
   (use-package php-mode
     :mode "\\.php\\'")
   (use-package rpm-spec-mode
