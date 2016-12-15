@@ -245,6 +245,8 @@
     :mode "\\.sls\\'")
   (use-package go-mode
     :mode "\\.go\\'")
+  (use-package adoc-mode
+    :mode "\\.adoc\\'")
   (use-package php-mode
     :mode "\\.php\\'")
   (use-package rpm-spec-mode
