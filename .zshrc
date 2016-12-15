@@ -20,6 +20,9 @@ setopt EXTENDED_GLOB
 
 setopt EMACS
 
+# https://unix.stackexchange.com/questions/33994/zsh-interpret-ignore-commands-beginning-with-as-comments
+setopt INTERACTIVE_COMMENTS
+
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 unsetopt AUTO_MENU
 unsetopt MENU_COMPLETE
