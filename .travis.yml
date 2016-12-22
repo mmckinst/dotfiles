@@ -5,11 +5,12 @@ addons:
   apt:
     packages:
       - bash
-      - zsh
+      # disable zsh checking on account of https://bugs.launchpad.net/ubuntu/+source/zsh/+bug/1242108
+      # - zsh
       - emacs23-nox
 script:
   - bash -n .bashrc
-#  - zsh -n .zshrc
+  # - zsh -n .zshrc
   - emacs -Q --batch -l .emacs
   - git config -f .gitconfig -l >/dev/null 2>&1
 notifications:
