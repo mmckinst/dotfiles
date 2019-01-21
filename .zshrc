@@ -17,7 +17,6 @@ setopt COMPLETE_IN_WORD
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt EXTENDED_GLOB
-
 setopt EMACS
 
 # https://unix.stackexchange.com/questions/33994/zsh-interpret-ignore-commands-beginning-with-as-comments
@@ -26,6 +25,7 @@ setopt INTERACTIVE_COMMENTS
 # http://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 unsetopt AUTO_MENU
 unsetopt MENU_COMPLETE
+
 # https://unix.stackexchange.com/questions/12035/zsh-equivalent-of-bash-show-all-if-ambiguous
 setopt BASH_AUTO_LIST
 
@@ -66,7 +66,6 @@ alias egrep='grep -E --color=auto'
 alias emacs='emacs -nw'
 
 alias ls='ls -F --color=auto'
-alias htop='htop --no-color'
 alias mtr='mtr --show-ips'
 
 # http://askubuntu.com/questions/4575/terminal-colours
@@ -84,5 +83,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 unfunction command_not_found_handler
 unfunction command_not_found_handle
 
-#PROMPT="[%F{green}%T%f][%n@%m %c]%# "
-PROMPT="[%F{green}%T%f][%(?,%n@%m %c,%F{red}%n@%m %c%f)] "
+if [[ -e /usr/share/powerline/zsh/powerline.zsh ]]; then
+    . /usr/share/powerline/zsh/powerline.zsh
+fi
