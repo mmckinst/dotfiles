@@ -86,3 +86,7 @@ unfunction command_not_found_handle >/dev/null 2>&1
 if [[ -e /usr/share/powerline/zsh/powerline.zsh ]]; then
     . /usr/share/powerline/zsh/powerline.zsh
 fi
+
+if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+		. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
