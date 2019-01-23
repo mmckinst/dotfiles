@@ -80,8 +80,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 # http://superuser.com/questions/394153/what-causes-bash-to-pause-after-a-bad-command
-unfunction command_not_found_handler
-unfunction command_not_found_handle
+unfunction command_not_found_handler >/dev/null 2>&1
+unfunction command_not_found_handle >/dev/null 2>&1
 
 if [[ -e /usr/share/powerline/zsh/powerline.zsh ]]; then
     . /usr/share/powerline/zsh/powerline.zsh
