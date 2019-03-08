@@ -84,14 +84,14 @@
 (setq user-mail-address "mmckinst@example.com")
 (setq user-full-name "Mark McKinstry")
 
-;; for whitespace mode
+;; if whitespace mode is enabled highlight lines over the fill-column (80) characters
 (setq whitespace-style '(face lines-tail trailing))
+
+;; if whitespace mode is enabled highlight trailing whitespace
+(setq show-trailing-whitespace t)
 
 ;; y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-;; custom aliases
-(defalias 'wm 'mmckinst-whitespace)
 
 ;; keybindings
 (global-set-key (kbd "M-g") 'goto-line)
@@ -176,18 +176,6 @@
   (insert (format-time-string "%Y-%m-%d"))
   (if (equal arg '(4))
       (insert " mmckinst")))
-
-
-;; https://stackoverflow.com/questions/11700934/emacs-set-and-toggle-show-trailing-whitespace/11701899#11701899
-;;
-;; toggle highlighting of bad whitespace
-;;
-;; whitespace mode that highlights lines over fill-column
-;; (80) characters
-(defun mmckinst-whitespace()
-  (interactive)
-  (setq show-trailing-whitespace (not show-trailing-whitespace))
-  (call-interactively 'whitespace-mode))
 
 ;; https://stackoverflow.com/questions/1510091/with-emacs-how-do-you-swap-the-position-of-2-windows
 (defun transpose-windows ()
