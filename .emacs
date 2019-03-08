@@ -32,7 +32,7 @@
 (line-number-mode t)
 (column-number-mode t)
 
-;; font-lock for all buffers
+;; turn on syntax highlighting
 (global-font-lock-mode 1)
 
 ;; highlight regions (when yanking)
@@ -84,23 +84,24 @@
 (setq user-mail-address "mmckinst@example.com")
 (setq user-full-name "Mark McKinstry")
 
-;; if whitespace mode is enabled highlight lines over the fill-column (80) characters
+;; whitespace mode
+;;
+;; highlight lines over the fill-column (80) characters
 (setq whitespace-style '(face lines-tail trailing))
-
-;; if whitespace mode is enabled highlight trailing whitespace
+;; highlight trailing whitespace
 (setq show-trailing-whitespace t)
 
 ;; y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; keybindings
+;; custom keybindings
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c d") 'mmckinst-insert-iso-8601-date)
 (global-set-key (kbd "C-x 4 t") 'transpose-windows)
 
-;; markdown-mode usually comes from emacs-goodies package
+;; markdown-mode usually comes from emacs-goodies package on fedora
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mkd\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
