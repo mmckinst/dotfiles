@@ -66,7 +66,7 @@
 (setq inhibit-startup-message t)
 
 ;; don't display anything in scratch buffer
-(setq initial-scratch-message "")
+(setq initial-scratch-message nil)
 
 ;; always end a file with a new line
 (setq require-final-newline t)
