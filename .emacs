@@ -113,7 +113,7 @@
 (add-to-list 'safe-local-variable-values '(encoding . utf-8))
 
 ;; rebind C-x C-b to use ibuffer
-(defalias 'list-buffers 'ibuffer-other-window)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; two spaces for tabs
 (setq indent-tabs-mode nil)
