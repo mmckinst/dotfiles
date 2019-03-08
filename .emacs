@@ -1,18 +1,17 @@
-;; generic section works on emacs >= 21.3 since I still have to touch CentOS 4
-;; servers which have 21.3.
+;; generic section works on emacs >= 23.1 because RHEL and CentOS 6 are still around
 ;;
-;; CentOS 4: 21.3
-;; CentOS 5: 21.4
-;; CentOS 6: 23.1
-;; CentOS 7: 24.3
+;; RHEL or CentOS 6: 23.1
+;; RHEL or CentOS 7: 24.3
 ;;
 ;; Debian 6 (squeeze): 23.2
-;; Debian 7 (wheezy): 23.4
-;; Debian 8 (jessie): 24.4
+;; Debian 7 (wheezy):  23.4
+;; Debian 8 (jessie):  24.4
+;; Debian 9 (stretch): 25.1
 ;;
 ;; Ubuntu 12.04 LTS (precise): 23.3
-;; Ubuntu 14.04 LTS (trusty): 24.3
-
+;; Ubuntu 14.04 LTS (trusty):  24.3
+;; Ubuntu 16.04 LTS (xenial):  24.5
+;; Ubuntu 18.04 LTS (bionic):  25.2
 
 
 ;; generic section is for any random computer I happen to need to edit stuff,
@@ -114,10 +113,7 @@
 (add-to-list 'safe-local-variable-values '(encoding . utf-8))
 
 ;; rebind C-x C-b to use ibuffer
-;; ibuffer added in 22.1
-(when (>= emacs-major-version 22)
-  (defalias 'list-buffers 'ibuffer-other-window))
-
+(defalias 'list-buffers 'ibuffer-other-window)
 
 ;; two spaces for tabs
 (setq indent-tabs-mode nil)
@@ -153,27 +149,17 @@
 ;; simple highlighting for files where no mode is defined
 (require 'generic-x)
 
-;; ido mode added in 22.1
-;;
 ;; makes opening files (C-x f) and switching buffers (C-x b) easier
 ;;
 ;; C-s and C-r to cycle through possible options
 ;; C-SPC or C-@ to restrict the completion list
 ;; C-j to create a new file or buffer without ido prompting you
-(if (>= emacs-major-version 22)
-    (progn
-      (ido-mode t)
-      (setq ido-enable-flex-matching t)
-      (add-to-list 'ido-ignore-buffers "*Messages*")
-      (add-to-list 'ido-ignore-buffers "*Buffer*")
-      (add-to-list 'ido-ignore-buffers "*Help*")
-      (add-to-list 'ido-ignore-buffers "*Completions*"))
-  (progn
-    (iswitchb-mode 1)
-    (add-to-list 'iswitchb-buffer-ignore "*Messages*")
-    (add-to-list 'iswitchb-buffer-ignore "*Buffer*")
-    (add-to-list 'iswitchb-buffer-ignore "*Help*")
-    (add-to-list 'iswitchb-buffer-ignore "*Completions")))
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+(add-to-list 'ido-ignore-buffers "*Messages*")
+(add-to-list 'ido-ignore-buffers "*Buffer*")
+(add-to-list 'ido-ignore-buffers "*Help*")
+(add-to-list 'ido-ignore-buffers "*Completions*")
 
 ;; line numbers in the left margin
 ;; added in 23.1
@@ -192,16 +178,16 @@
       (insert " mmckinst")))
 
 
-
+;; https://stackoverflow.com/questions/11700934/emacs-set-and-toggle-show-trailing-whitespace/11701899#11701899
+;;
 ;; toggle highlighting of bad whitespace
 ;;
-;; emacs 23 has whitespace mode that highlights lines over fill-column
+;; whitespace mode that highlights lines over fill-column
 ;; (80) characters
 (defun mmckinst-whitespace()
   (interactive)
-  (if (< emacs-major-version 23)
-      (setq show-trailing-whitespace (not show-trailing-whitespace))
-    (call-interactively 'whitespace-mode)))
+  (setq show-trailing-whitespace (not show-trailing-whitespace))
+  (call-interactively 'whitespace-mode))
 
 ;; https://stackoverflow.com/questions/1510091/with-emacs-how-do-you-swap-the-position-of-2-windows
 (defun transpose-windows ()
