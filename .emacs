@@ -84,11 +84,10 @@
 (setq rpm-spec-user-mail-address "mmckinst@fedoraproject.org")
 (setq rpm-spec-user-full-name "Mark McKinstry")
 
-;; whitespace mode
-;;
-;; highlight lines over the fill-column (80) characters
+;; if whitespace mode is enabled highlight lines over the fill-column (80) characters
 (setq whitespace-style '(face lines-tail trailing))
-;; highlight trailing whitespace
+
+;; if whitespace mode is enabled highlight trailing whitespace
 (setq show-trailing-whitespace t)
 
 ;; y/n instead of yes/no
