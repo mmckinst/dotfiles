@@ -79,6 +79,7 @@
 
 ;; fill at 80 columns
 (setq-default fill-column 80)
+;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; set email and name for rpm-spec mode
 (setq rpm-spec-user-mail-address "mmckinst@fedoraproject.org")
@@ -121,6 +122,9 @@
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
 (defvaralias 'js-indent-level 'tab-width)
+
+;; spell check in all text modes
+(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; spell checking for comments in programming modes
 ;; prog-mode added in 24.1
