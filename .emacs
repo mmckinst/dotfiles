@@ -133,8 +133,15 @@
 ;; https://stackoverflow.com/questions/15891808/emacs-how-to-enable-automatic-spell-check-by-default
 (when (>= emacs-major-version 24)
   (add-hook 'prog-mode-hook 'flyspell-prog-mode))
-(add-hook 'text-mode-hook 'flyspell-mode)
-;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;; https://old.reddit.com/r/emacs/comments/bcs6v7/sanemacs_is_a_minimal_emacs_configuration/ekvcjhd/
+;; emacs 26 has display-line-numbers-mode, older ones have linum-mode
+(setq linum-format "%4d \u2502 ")
+(add-hook 'prog-mode-hook
+          (if (fboundp 'display-line-numbers-mode)
+              #'display-line-numbers-mode
+            #'linum-mode))
+
 
 ;; eletric-indent-mode added and enabled by default in 24.4
 (when (>= (string-to-number (substring emacs-version 0 -2)) 24.4)
@@ -164,13 +171,6 @@
 (add-to-list 'ido-ignore-buffers "*Buffer*")
 (add-to-list 'ido-ignore-buffers "*Help*")
 (add-to-list 'ido-ignore-buffers "*Completions*")
-
-;; line numbers in the left margin
-;; added in 23.1
-;; (when (>= emacs-major-version 23)
-;;   (global-linum-mode 1)
-;;   (setq linum-format "%4d \u2502 "))
-
 
 ;; make inserting an ISO 8601 timestamp easier
 ;; use C-u as the prefix to put my name after the timestamp
