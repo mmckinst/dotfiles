@@ -80,9 +80,9 @@
 ;; fill at 80 columns
 (setq-default fill-column 80)
 
-;; mostly for rpm-spec mode
-(setq user-mail-address "mmckinst@example.com")
-(setq user-full-name "Mark McKinstry")
+;; set email and name for rpm-spec mode
+(setq rpm-spec-user-mail-address "mmckinst@fedoraproject.org")
+(setq rpm-spec-user-full-name "Mark McKinstry")
 
 ;; whitespace mode
 ;;
