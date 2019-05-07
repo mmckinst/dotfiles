@@ -6,7 +6,7 @@ addons:
     packages:
       - bash
       - zsh
-      - emacs23-nox
+      - emacs-nox
 script:
   - bash -n .bashrc
   - zsh -n .zshrc
