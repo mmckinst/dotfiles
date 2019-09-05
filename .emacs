@@ -117,7 +117,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; two spaces for tabs
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (setq tab-width 2)
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
