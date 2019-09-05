@@ -88,5 +88,5 @@ if [[ -e /usr/share/powerline/zsh/powerline.zsh ]]; then
 fi
 
 if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-		. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
