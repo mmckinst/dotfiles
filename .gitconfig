@@ -16,6 +16,7 @@
 	rop = reset --hard origin/production
 [core]
 	editor = emacs
+	excludesFile = ~/.gitignore_global
 [merge]
 	stat = true
 	conflictstyle = diff3

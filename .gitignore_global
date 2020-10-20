@@ -1,0 +1,5 @@
+.DS_Store
+
+# emacs tilde files and vim swp files
+*~
+*.swp
