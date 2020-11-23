@@ -206,6 +206,48 @@
 
 
 ;;  ---------------------------------------------------------------------------
+;; | ORG MODE                                                                  |
+;;  ---------------------------------------------------------------------------
+
+;; spell checking in org-mode
+(add-hook 'org-mode-hook 'flyspell-mode)
+
+(global-set-key (kbd "C-c c") 'org-capture)
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/somewhere.org" "Backlog")
+         "* TODO %?\n  - Captured on %U")))
+
+(setq org-refile-targets (quote ((nil :maxlevel . 1)
+                                 (org-agenda-files :maxlevel . 1))))
+
+;; log when something is marked as done.
+;;
+;; same as adding '#+STARTUP: logdone' to a file
+(setq org-log-done 'time)
+
+;; default is to log the date as YYYY-MM-DD but put the HH:MM there too
+(setq org-log-done-with-time t)
+
+;; log when tasks are refiled
+;;
+;; same as adding '#+STARTUP: logrefile' to a file
+(setq org-log-refile 'time)
+
+;; log state changes and timestamps in a drawer
+;; same as adding '#+STARTUP: logdrawer' to a file
+;; (setq org-log-into-drawer t)
+
+;; orgmode.org/manual/Clean-view.html
+;; (setq org-startup-indented t)
+;; (setq org-startup-truncated nil)
+(setq org-adapt-indentation t)
+;; protect myself from myself
+(setq org-ctrl-k-protect-subtree t)
+(setq org-catch-invisible-edits 'show)
+
+
+;;  ---------------------------------------------------------------------------
 ;; | CUSTOM STUFF                                                              |
 ;;  ---------------------------------------------------------------------------
 
@@ -271,25 +313,3 @@
 	   ("C-x b" . helm-buffers-list)
 	   ("M-y" . helm-show-kill-ring)
 	   ("M-x" . helm-M-x))))
-
-
-;; org mode added in emacs 22
-(when (>= emacs-major-version 22)
-  (global-set-key (kbd "C-c l") 'org-store-link)
-  (global-set-key (kbd "C-c c") 'org-capture)
-  (global-set-key (kbd "C-c a") 'org-agenda)
-  (global-set-key (kbd "C-c b") 'org-iswitchb)
-
-  ;; log when something is marked as done.
-  ;;
-  ;; default is to log the date as YYYY-MM-DD but put the HH:MM there too
-  (setq org-log-done 'time)
-  (setq org-log-done-with-time t)
-  (setq org-log-into-drawer t)
-
-  ;; orgmode.org/manual/Clean-view.html
-  (setq org-startup-indented t)
-
-  ;; protect myself from myself
-  (setq org-ctrl-k-protect-subtree t)
-  (setq org-catch-invisible-edits 'show))
