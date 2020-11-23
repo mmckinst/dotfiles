@@ -233,6 +233,8 @@
     :mode "\\.adoc\\'")
   (use-package php-mode
     :mode "\\.php\\'")
+  (use-package csv-mode
+    :mode "\\.csv\\'")
   (use-package rpm-spec-mode
     :mode "\\.spec\\'")
   (use-package jinja2-mode
@@ -242,20 +244,13 @@
     :mode "Dockerfile\\'")
   (use-package markdown-mode
     :mode "\\.md\\'"
+    :mode "\\.mkd\\'"
     :mode "\\.markdown\\'")
-  (use-package multiple-cursors
-    :bind(("C->" . mc/mark-next-like-this)
-	  ("C-<" . mc/mark-previous-like-this)
-	  ("C-c C-<" . mc/mark-all-like-this)))
   (use-package discover-my-major
     :bind ("C-h C-m" . discover-my-major))
   (use-package smex
     :bind (("M-x" . smex)
 	   ("M-X" . smex-major-mode-commands)))
-  (use-package avy
-    :disabled t)
-  (use-package ido-ubiquitous
-    :config (ido-ubiquitous-mode 1))
   (use-package flx-ido
     :init (setq ido-use-faces nil)
     :config (flx-ido-mode 1))
