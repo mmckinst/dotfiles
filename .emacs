@@ -61,6 +61,12 @@
 (if (display-graphic-p)
     (tool-bar-mode -1))
 
+;; the scroll bar useless 100% of the time, GUI and non GUI
+(scroll-bar-mode -1)
+
+;; make window title the buffer name
+(setq-default frame-title-format '("%b"))
+
 ;; don't start in the "help" screen when you start emacs with no file. start in
 ;; *scratch* instead
 (setq inhibit-startup-message t)
