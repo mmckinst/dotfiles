@@ -56,13 +56,14 @@
 ;; toolbar is useless 100% of the time including in a GUI but the symbol is only
 ;; defined when using a graphical display
 ;;
+;; the scroll bar is also useless 100% of the time, GUI and non GUI
+;;
 ;; https://serverfault.com/questions/132055/how-to-check-if-emacs-is-in-gui-mode-and-execute-tool-bar-mode-only-then
 ;; https://superuser.com/questions/313398/how-to-prevent-the-symbols-function-definition-is-void-error-when-running-em
 (if (display-graphic-p)
-    (tool-bar-mode -1))
-
-;; the scroll bar useless 100% of the time, GUI and non GUI
-(scroll-bar-mode -1)
+    (progn
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
 
 ;; make window title the buffer name
 (setq-default frame-title-format '("%b"))
