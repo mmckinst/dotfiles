@@ -8,8 +8,9 @@
 	br = branch
 	bra = branch --all
 	tree = log --graph --oneline
-	fu = fetch --v upstream
-	fo = fetch --v origin
+	fu = fetch -v upstream
+	fo = fetch -v origin
+	r = remote -v
 	rum = reset --hard upstream/master
 	rup = reset --hard upstream/production
 	rom = reset --hard origin/master
